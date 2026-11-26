@@ -73,6 +73,10 @@ resource "azurerm_virtual_network" "res-1" {
   location            = "eastus"
   name                = "my_test_Vnet_"
   resource_group_name = "my_test_RG"
+  tags = {
+  ManagedBy   = "Terraform"
+  Environment = "Lab"
+}
 }
 resource "azurerm_subnet" "res-1" {
   address_prefixes                = ["10.0.0.0/24"]
