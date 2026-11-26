@@ -93,6 +93,10 @@ resource "azurerm_virtual_network" "res-2" {
   location            = "southafricanorth"
   name                = "vnet-southafricanorth-1"
   resource_group_name = "my_test_RG"
+  tags = {
+  ManagedBy   = "Terraform"
+  Environment = "Lab"
+}
 }
 resource "azurerm_subnet" "res-2" {
   address_prefixes     = ["172.16.0.0/24"]
