@@ -107,3 +107,14 @@ resource "azurerm_subnet" "res-2" {
     azurerm_virtual_network.res-2,
   ]
 }
+import {
+  to = azurerm_virtual_network.manual_vnet
+  id = "/subscriptions/92b5e680-f096-409b-ab88-faa516e81307/resourceGroups/my_test_RG/providers/Microsoft.Network/virtualNetworks/my_test_vnet_2"
+}
+
+resource "azurerm_virtual_network" "manual_vnet" {
+  name                = "my_test_vnet_2"
+  location            = "CentralIndia "
+  resource_group_name = "my_test_RG"
+  address_space       = ["10.0.0.0/16"]
+}
